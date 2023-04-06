@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./cat
+        working-directory: ./test_scripts
     runs-on: macos-latest
     needs: [build, test]
     steps:
