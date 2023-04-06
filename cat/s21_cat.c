@@ -1,8 +1,8 @@
 //  Copyright 2022 michaleh
 
-//#include <stdio.h>
-//#include <string.h>
-//#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include <stddef.h>
 
 #define SIZE 10000
 

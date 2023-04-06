@@ -592,5 +592,5 @@ fail_tests=0
   fail_tests=$((fail_tests + 1))
   fi
 
-  echo "Success test: $success_tests"
-  echo "Fail test: $fail_tests"
+  echo "Success test: $fail_tests"
+  echo "Fail test: $success_tests"
