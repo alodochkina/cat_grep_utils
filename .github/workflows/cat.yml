@@ -1,0 +1,32 @@
+on:
+  push:
+    branch: develop
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: ./cat
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: make s21_cat
+  test:
+    defaults:
+      run:
+        working-directory: ./cat
+    runs-on: macos-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v1
+      - run: make test
+  style:
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./cat
+    runs-on: macos-latest
+    needs: [build, test]
+    steps:
+      - uses: actions/checkout@v1
+      - run: brew install clang-format
+      - run: bash ../test_scripts/style.sh
