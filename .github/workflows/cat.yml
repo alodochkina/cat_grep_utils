@@ -13,20 +13,20 @@ jobs:
   test:
     defaults:
       run:
-        working-directory: ./cat
+        working-directory: ./.github/workflows/test_scripts/cat
     runs-on: macos-latest
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - run: make test
+      - run: bash test.sh
   style:
     defaults:
       run:
         shell: bash
-        working-directory: ./test_scripts
+        working-directory: ./.github/workflows/test_scripts/cat
     runs-on: macos-latest
     needs: [build, test]
     steps:
       - uses: actions/checkout@v1
       - run: brew install clang-format
-      - run: bash ../test_scripts/style.sh
+      - run: bash style.sh
