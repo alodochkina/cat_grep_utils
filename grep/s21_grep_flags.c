@@ -106,7 +106,8 @@ int s21_grep_flag_v(int arg_number, char *arg[], int number_file) {
                     printf("%s", line);
                 }
             }
-        }fclose(file);
+        } puts("");
+        fclose(file);
         regfree(&string);
     }
     return 0;

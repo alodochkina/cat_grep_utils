@@ -1,14 +1,15 @@
 #!/bin/bash
 
-test1_file=../../README.md
-test2_file=./test.file
-test3_file=./text.file
+test1_file=./test.file
+test2_file=./text.file
+test3_file=../cat/text.txt
+
 success_tests=0
 fail_tests=0
 
 #  Test1
 
-  echo "Test1: grep README.md test.file"
+  echo "Test1: grep test.file text.file"
 
   grep_result=$(grep $test1_file $test2_file)
   s21_grep_result=$(./s21_grep $test1_file $test2_file)
@@ -26,7 +27,7 @@ fail_tests=0
 
 #  Test2
 
-  echo "Test2: grep _grep README.md test.file"
+  echo "Test2: grep _grep test.file text.file"
 
   grep_result=$(grep _grep $test1_file $test2_file)
   s21_grep_result=$(./s21_grep _grep $test1_file $test2_file)
@@ -43,7 +44,7 @@ fail_tests=0
 
 #  Test3
 
-  echo "Test3: grep -e Cat README.md test.file"
+  echo "Test3: grep -e Cat test.file text.file"
 
   grep_result=$(grep -e Cat $test1_file $test2_file)
   s21_grep_result=$(./s21_grep -e Cat $test1_file $test2_file)
@@ -60,7 +61,7 @@ fail_tests=0
 
 #  Test4
 
-  echo "Test4: grep -i Au README.md test.file"
+  echo "Test4: grep -i Au test.file text.file"
 
   grep_result=$(grep -i Au $test1_file $test2_file)
   s21_grep_result=$(./s21_grep -i Au $test1_file $test2_file)
@@ -77,7 +78,7 @@ fail_tests=0
 
 #  Test5
 
-  echo "Test5: grep -v le README.md test.file"
+  echo "Test5: grep -v le test.file text.file"
 
   grep_result=$(grep -v le $test1_file $test2_file)
   s21_grep_result=$(./s21_grep -v le $test1_file $test2_file)
@@ -94,7 +95,7 @@ fail_tests=0
 
 #  Test6
 
-  echo "Test6: grep -c t README.md test.file"
+  echo "Test6: grep -c t test.file text.file"
 
   grep_result=$(grep -c \| $test1_file $test2_file)
   s21_grep_result=$(./s21_grep -c \| $test1_file $test2_file)
@@ -111,7 +112,7 @@ fail_tests=0
 
 #  Test7
 
-  echo "Test7: grep -l 3 README.md test.file text.file"
+  echo "Test7: grep -l 3 test.file text.file text.txt"
 
   grep_result=$(grep -l 3 $test1_file $test2_file $test3_file)
   s21_grep_result=$(./s21_grep -l 3 $test1_file $test2_file $test3_file)
@@ -128,7 +129,7 @@ fail_tests=0
 
 #  Test8
 
-  echo "Test8: grep -n : README.md test.file"
+  echo "Test8: grep -n : test.file text.file"
 
   grep_result=$(grep -n : $test1_file $test2_file)
   s21_grep_result=$(./s21_grep -n : $test1_file $test2_file)
