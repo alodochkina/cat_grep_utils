@@ -15,3 +15,5 @@ s21_grep.o:
 	gcc $(FLAGS) -c $(GREP_C)
 test: s21_grep
 	./grep_test.sh
+style:
+	clang-format -n *.c
