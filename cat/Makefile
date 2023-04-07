@@ -9,3 +9,5 @@ s21_cat:
 	gcc $(FLAGS) s21_cat.c -o s21_cat
 test: s21_cat
 	./cat_test.sh
+style:
+	clang-format -n *.c

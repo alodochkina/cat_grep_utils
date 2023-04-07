@@ -5,15 +5,15 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: ./cat
+        working-directory: ./grep
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - run: make s21_cat
+      - run: make s21_grep
   test:
     defaults:
       run:
-        working-directory: ./test_scripts/cat
+        working-directory: ./test_scripts/grep
     runs-on: macos-latest
     needs: build
     steps:
@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./test_scripts/cat
+        working-directory: ./test_scripts/grep
     runs-on: macos-latest
     needs: [build, test]
     steps:
