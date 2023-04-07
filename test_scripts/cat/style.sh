@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./cat || exit
+cd ../cat || exit
 make style 2>output
 cat ./output
 if [ -z "$(cat ./output)" ]

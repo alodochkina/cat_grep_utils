@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./cat || exit
+cd ../cat || exit
 make test 2>output
 cat ./output
 fail_number=$(awk '/Fail test: / {print $3}' < file)
