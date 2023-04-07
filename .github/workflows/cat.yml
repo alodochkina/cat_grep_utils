@@ -13,7 +13,7 @@ jobs:
   test:
     defaults:
       run:
-        working-directory: ./.github/workflows/test_scripts/cat
+        working-directory: ./test_scripts/cat
     runs-on: macos-latest
     needs: build
     steps:
@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./.github/workflows/test_scripts/cat
+        working-directory: ./test_scripts/cat
     runs-on: macos-latest
     needs: [build, test]
     steps:
