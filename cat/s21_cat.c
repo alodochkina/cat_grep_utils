@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define SIZE 10000
+#define  SIZE 10000
 
 enum FLAG_B { flag_b_on, flag_b_off } flagB;
 enum FLAG_E { flag_e_on, flag_e_off } flagE;
