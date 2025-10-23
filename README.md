@@ -68,4 +68,4 @@ Examples:
 - `cat/cat_test.sh`
 - `grep/grep_test.sh`
 
-Run the scripts from the project root or their respective directories:
+Run the scripts from the project root or their respective directories
