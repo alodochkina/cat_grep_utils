@@ -1,7 +1,7 @@
 //  Copyright 2022 michaleh
 #include "./s21_grep.h"
 
-int arguments(int arg_number, char *arg[]) {
+int arguments(int arg_number, char* arg[]) {
   if (arg_number == 1) {
     s21_grep_no_argument();
   } else if (arg_number == 2) {
@@ -26,7 +26,7 @@ int s21_grep_no_argument(void) {
   return 0;
 }
 
-int s21_grep_one_argument(char *arg[]) {
+int s21_grep_one_argument(char* arg[]) {
   if (s21_grep_flags(arg) == -1) {
     while (!feof(stdin)) {
       getchar();
@@ -38,7 +38,7 @@ int s21_grep_one_argument(char *arg[]) {
   return 0;
 }
 
-int s21_grep_two_argument(int arg_number, char *arg[]) {
+int s21_grep_two_argument(int arg_number, char* arg[]) {
   if (s21_grep_flags(arg) == -1) {
     for (int i = 2; i < arg_number; i++) {
       s21_grep_flag_e(arg_number, arg, 1, i);
@@ -51,12 +51,12 @@ int s21_grep_two_argument(int arg_number, char *arg[]) {
   return 0;
 }
 
-int s21_grep_no_file(char *arg[], int number_file) {
+int s21_grep_no_file(char* arg[], int number_file) {
   printf("%s%s%s%s\n", "grep: ", arg[number_file], ": ", strerror(2));
   return 0;
 }
 
-int s21_grep_print(int arg_number, char *arg[]) {
+int s21_grep_print(int arg_number, char* arg[]) {
   enum FLAGS grepFlags;
   switch (s21_grep_flags(arg)) {
     case 0:

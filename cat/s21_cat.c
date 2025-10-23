@@ -13,16 +13,16 @@ enum FLAG_S { flag_s_on, flag_s_off } flagS;
 enum FLAG_T { flag_t_on, flag_t_off } flagT;
 enum FLAG_V { flag_v_on, flag_v_off } flagV;
 
-int s21_cat_flags(int arg_number, char *arg[]);
-int s21_cat_print(int flag_number, char *flags[]);
-int s21_cat_flag_b(char *arg[], int i);
-int s21_cat_flag_e(char *arg[], int i);
-int s21_cat_flag_n(char *arg[], int i);
-int s21_cat_flag_s(char *arg[], int i);
-int s21_cat_flag_t(char *arg[], int i);
+int s21_cat_flags(int arg_number, char* arg[]);
+int s21_cat_print(int flag_number, char* flags[]);
+int s21_cat_flag_b(char* arg[], int i);
+int s21_cat_flag_e(char* arg[], int i);
+int s21_cat_flag_n(char* arg[], int i);
+int s21_cat_flag_s(char* arg[], int i);
+int s21_cat_flag_t(char* arg[], int i);
 int s21_cat_flag_v(char line);
 
-int main(int arg_number, char *arg[]) {
+int main(int arg_number, char* arg[]) {
   flagB = flag_b_off;
   flagE = flag_e_off;
   flagN = flag_n_off;
@@ -33,8 +33,8 @@ int main(int arg_number, char *arg[]) {
   return 0;
 }
 
-int s21_cat_print(int arg_number, char *arg[]) {
-  FILE *file;
+int s21_cat_print(int arg_number, char* arg[]) {
+  FILE* file;
   unsigned int n = 1;
   int i;
   char c;
@@ -124,23 +124,23 @@ int s21_cat_print(int arg_number, char *arg[]) {
   return 0;
 }
 
-int s21_cat_flags(int arg_number, char *arg[]) {
+int s21_cat_flags(int arg_number, char* arg[]) {
   int number_flags = 11;
   int equal;
   int i, j;
   int n = 0;
-  const char *flag_b = "-b";
-  const char *flag_e = "-e";
-  const char *flag_n = "-n";
-  const char *flag_s = "-s";
-  const char *flag_t = "-t";
-  const char *flag_v = "-v";
-  const char *flag_b_gnu = "--number-nonblank";
-  const char *flag_e_gnu = "-E";
-  const char *flag_n_gnu = "--number";
-  const char *flag_s_gnu = "--squeeze-blank";
-  const char *flag_t_gnu = "-T";
-  const char *flags[] = {flag_b, flag_b_gnu, flag_e, flag_e_gnu,
+  const char* flag_b = "-b";
+  const char* flag_e = "-e";
+  const char* flag_n = "-n";
+  const char* flag_s = "-s";
+  const char* flag_t = "-t";
+  const char* flag_v = "-v";
+  const char* flag_b_gnu = "--number-nonblank";
+  const char* flag_e_gnu = "-E";
+  const char* flag_n_gnu = "--number";
+  const char* flag_s_gnu = "--squeeze-blank";
+  const char* flag_t_gnu = "-T";
+  const char* flags[] = {flag_b, flag_b_gnu, flag_e, flag_e_gnu,
                          flag_n, flag_n_gnu, flag_s, flag_s_gnu,
                          flag_t, flag_t_gnu, flag_v};
 

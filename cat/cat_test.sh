@@ -582,10 +582,10 @@ fail_tests=0
   cat_result=$(cat -t $test1_file $test2_file)
   s21_cat_result=$(./s21_cat -T $test1_file $test2_file)
 
-#  echo "Cat result: $cat_result"
-#  echo "S21_cat result: $s21_cat_result"
+ echo "Cat result: $cat_result"
+ echo "S21_cat result: $s21_cat_result"
 
-  if [ "$cat_result" = "$s21_cat_result" ];
+  if [ "$cat_result" == "$s21_cat_result" ];
   then echo "Success"
   success_tests=$((success_tests + 1))
   else echo -e "Fail\n"
